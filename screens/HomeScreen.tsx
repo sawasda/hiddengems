@@ -1,18 +1,10 @@
-import { StyleSheet, Text, View } from "react-native";
+import MapView from "react-native-maps";
 
 export default function HomeScreen() {
+
     return (
-        <View style={styles.container}>
-            <Text>Map is shown here</Text>
-        </View>
+        <MapView
+            style={{ width: '100%', height: '100%' }}
+        />
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
