@@ -1,9 +1,26 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Button } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { RootStackParamList } from "../navigationTypes";
 
 export default function AddScreen() {
+    const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+
     return (
         <View style={styles.container}>
             <Text>You must be logged in to add a new Hidden Gem</Text>
+            <Button
+                title="Sign in"
+                onPress={() => navigation.navigate('Sign In')}
+            />
+            <Text style={{ marginTop: 15, fontSize: 13 }}>
+                No account?{' '}
+                <Text style={{ color: 'blue' }}
+                    onPress={() => navigation.navigate('Sign Up')}
+                >
+                    Sign up
+                </Text>
+            </Text>
         </View>
     );
 }
